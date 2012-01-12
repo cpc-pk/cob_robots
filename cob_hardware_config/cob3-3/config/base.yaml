@@ -1,0 +1,163 @@
+#CAN-device parameters
+#-------------------------------------------------
+can_device_path: /dev/pcan0
+can_baudrate_val: 0
+can_comm_timeout: 7 #[s]
+
+#General parameters
+#-------------------------------------------------
+number_of_wheels: 4
+radius_wheels: 75 #[mm]
+dist_steer_axis_to_drive_wheel: 22 #[mm]
+max_drive_rate: 12.267 #[rad/s]
+max_steer_rate: 24.4 #[rad/s]
+
+#Drive parameters for each joint
+#-------------------------------------------------
+caster_front_left: # Wheel1
+  drive:
+    SteerDriveCoupling: 0;
+    WheelNeutralPosition: 3.14159265; #[rad]
+    
+    CanOpenID: 2
+  
+    EncIncrPerRevMot: 4096;
+    VelMeasFrqHz: 1;
+    GearRatio: 15;
+    BeltRatio: 2;
+    Sign: 1;
+    VelMaxEncIncrS: 240000;
+    AccIncrS: 500000;
+    DecIncrS: 500000;
+    EncOffsetIncr: 0;
+    IsSteering: false;
+    CurrentToTorque: 0.10065;    #Factor to convert motor active current [A] into Torque [Nm]
+    CurrMax: 9.62;               #Defines maximum allowed current command (in MotionMode: CurrentCtrl)
+    HomingDigIn: 9;
+  steer:
+    CanOpenID: 1
+    
+    EncIncrPerRevMot: 4096;
+    VelMeasFrqHz: 1;
+    GearRatio: 12.66666666;
+    BeltRatio: 1;
+    Sign: -1;
+    VelMaxEncIncrS: 240000;
+    AccIncrS: 1000000;
+    DecIncrS: 1000000;
+    EncOffsetIncr: 25412;
+    IsSteering: true;
+    CurrentToTorque: 0.10065;
+    CurrMax: 9.62;
+    HomingDigIn: 9;
+    
+caster_back_left: # Wheel2
+  drive:
+    SteerDriveCoupling: 0;
+    WheelNeutralPosition: 3.14159265; #[rad]
+  
+    CanOpenID: 4
+    
+    EncIncrPerRevMot: 4096;
+    VelMeasFrqHz: 1;
+    GearRatio: 15;
+    BeltRatio: 2;
+    Sign: -1;
+    VelMaxEncIncrS: 240000;
+    AccIncrS: 500000;
+    DecIncrS: 500000;
+    EncOffsetIncr: 0;
+    IsSteering: false;
+    CurrentToTorque: 0.10065;
+    CurrMax: 9.62;
+    HomingDigIn: 9;
+  steer:
+    CanOpenID: 3
+    
+    EncIncrPerRevMot: 4096;
+    VelMeasFrqHz: 1;
+    GearRatio: 12.66666666;
+    BeltRatio: 1;
+    Sign: 1;
+    VelMaxEncIncrS: 240000;
+    AccIncrS: 1000000;
+    DecIncrS: 1000000;
+    EncOffsetIncr: 26771;
+    IsSteering: true;
+    CurrentToTorque: 0.10065;
+    CurrMax: 9.62;
+    HomingDigIn: 9;
+    
+caster_back_right: # Wheel3
+  drive:
+    SteerDriveCoupling: 0;
+    WheelNeutralPosition: 0; #[rad]
+  
+    CanOpenID: 6
+    
+    EncIncrPerRevMot: 4096;
+    VelMeasFrqHz: 1;
+    GearRatio: 15;
+    BeltRatio: 2;
+    Sign: 1;
+    VelMaxEncIncrS: 240000;
+    AccIncrS: 500000;
+    DecIncrS: 500000;
+    EncOffsetIncr: 0;
+    IsSteering: false;
+    CurrentToTorque: 0.10065;
+    CurrMax: 9.62;
+    HomingDigIn: 9;
+  steer:
+    CanOpenID: 5
+    
+    EncIncrPerRevMot: 4096;
+    VelMeasFrqHz: 1;
+    GearRatio: 12.66666666;
+    BeltRatio: 1;
+    Sign: -1;
+    VelMaxEncIncrS: 240000;
+    AccIncrS: 1000000;
+    DecIncrS: 1000000;
+    EncOffsetIncr: 25459;
+    IsSteering: true;
+    CurrentToTorque: 0.10065;
+    CurrMax: 9.62;
+    HomingDigIn: 9;
+    
+caster_front_right: # Wheel4
+  drive:
+    SteerDriveCoupling: 0;
+    WheelNeutralPosition: 0; #[rad]
+  
+    CanOpenID: 8
+    
+    EncIncrPerRevMot: 4096;
+    VelMeasFrqHz: 1;
+    GearRatio: 15;
+    BeltRatio: 2;
+    Sign: -1;
+    VelMaxEncIncrS: 240000;
+    AccIncrS: 500000;
+    DecIncrS: 500000;
+    EncOffsetIncr: 0;
+    IsSteering: false;
+    CurrentToTorque: 0.10065;
+    CurrMax: 9.62;
+    HomingDigIn: 9;
+  steer:
+    CanOpenID: 7
+    
+    EncIncrPerRevMot: 4096;
+    VelMeasFrqHz: 1;
+    GearRatio: 12.66666666;
+    BeltRatio: 1;
+    Sign: 1;
+    VelMaxEncIncrS: 240000;
+    AccIncrS: 1000000;
+    DecIncrS: 1000000;
+    EncOffsetIncr: 26831;
+    IsSteering: true;
+    CurrentToTorque: 0.10065;
+    CurrMax: 9.62;
+    HomingDigIn: 9;

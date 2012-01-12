@@ -7,7 +7,8 @@
 		
 		<!-- upload parameters -->
 		<param name="IniDirectory" value="$(find cob_hardware_config)/$(env ROBOT)/config/base/"/>
-		<param name="PublishEffort" value="false"/>
+		<param name="PublishEffort" value="false"/>		
+		<rosparam command="load" file="$(find cob_hardware_config)/$(env ROBOT)/config/base.yaml"/>
 		
 		<!-- start underlying components - base_drive_chain -->
 		<include file="$(find cob_base_drive_chain)/ros/launch/base_drive_chain.launch" >
